@@ -1,0 +1,15 @@
+spring:
+  liquibase:
+    enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: eSeNia300721
+    driver-class-name: org.postgresql.Driver
+
+server:
+  port: 8989
+
+springdoc:
+  api-docs:
+    path: /api-docs
