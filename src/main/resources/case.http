@@ -1,0 +1,27 @@
+### создание
+POST http://localhost:8989/api/v1/cars/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "model": "Audi Q8",
+  "speed": 300,
+  "price": 440000
+}
+
+### получение авто по ID
+GET http://localhost:8989/api/v1/cars/?id=1
+
+### обновление
+PUT http://localhost:8989/api/v1/cars/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "model": "BMW",
+  "speed": 350,
+  "price": 144000
+}
+
+### удаление по ID
+DELETE http://localhost:8989/api/v1/cars/?id=1

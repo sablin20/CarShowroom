@@ -3,32 +3,32 @@ package ru.sablin.carshowroom.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.sablin.carshowroom.entity.Car;
-import ru.sablin.carshowroom.repository.CarRepository;
+import ru.sablin.carshowroom.service.CarService;
 
 @RestController
 @RequestMapping("/api/v1/cars")
 @RequiredArgsConstructor
 public class CarController {
 
-    private final CarRepository repository;
+    private final CarService service;
 
     @GetMapping("/")
     public Car getById(@RequestParam("id") Long id) {
-        return repository.findById(id);
+        return service.findById(id);
     }
 
     @PostMapping("/")
-    public Car create(@RequestBody Car car) {
-        return repository.create(car);
+    public void create(@RequestBody Car car) {
+        service.create(car);
     }
 
     @DeleteMapping("/")
     public void remove(@RequestParam("id") Long id) {
-        repository.delete(id);
+        service.deleteById(id);
     }
 
     @PutMapping("/")
     public void update(@RequestBody Car car) {
-        repository.update(car);
+        service.update(car);
     }
 }

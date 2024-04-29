@@ -6,6 +6,12 @@ spring:
     username: postgres
     password: eSeNia300721
     driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
 
 server:
   port: 8989
